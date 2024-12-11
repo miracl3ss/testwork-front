@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { CtaButtonComponent } from "../../common-ui/cta-button/cta-button.component";
 
@@ -9,5 +9,7 @@ import { CtaButtonComponent } from "../../common-ui/cta-button/cta-button.compon
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-
+  buttonData = {
+    text: "Проще простого!"
+  }
 }

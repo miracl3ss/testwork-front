@@ -1,9 +1,9 @@
 :host {
     position: relative;
     display: grid;
+    grid-template-columns: 2fr 3fr 2fr;
     background-image: url('/assets/imgs/main-bg.png');
     height: 100vh;
-    grid-template-columns: repeat(3, 1fr);
     &:before {
         content: '';
         position: absolute;
@@ -16,9 +16,9 @@
 }
 .container {
     display: grid;
-    
     gap: 18px;
     align-content: center;
     text-align: center;
     z-index: 3;
+    grid-column: 2
 }

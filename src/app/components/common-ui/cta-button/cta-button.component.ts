@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-cta-button',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './cta-button.component.scss'
 })
 export class CtaButtonComponent {
-
+  @Input() buttonData!: { text: string; };
 }
