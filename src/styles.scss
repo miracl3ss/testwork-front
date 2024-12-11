@@ -1,1 +1,109 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'reset.scss';
+@import 'fonts';
+
+:root {
+    --black-color: #191C1F;
+    --dark-gray-color: #5E646A;
+    --gray-color: #83898F;
+    --mid-gray-color: #C2C8CD;
+    --light-gray-color: #ECEFF2;
+    --extralight-gray-color: #F6F8FA;
+    --white-color: #FFFFFF;
+
+    --dangerous-color: #F13636;
+    --success-color: #25CD82;
+
+    --primary-disabled-color: #ABCAE6;
+    --primary-color: #2A6CEA;
+    --primary-hover-color: #397DFF
+}
+
+body {
+    font-family: 'Graphik';
+    color: var(--white-color)
+}
+
+.hl1 {
+    font-weight: 600;
+    font-size: 52px;
+    line-height: 64px;
+}
+
+.hl2 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 56px;
+}
+
+.hl3 {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.hl4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.hl5 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.hl6 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.b18 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.b16 {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.b14 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.b12 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.b18bold {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.b16bold {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.b14bold {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.b12bold {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+}
