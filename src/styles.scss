@@ -21,40 +21,40 @@
 
 body {
     font-family: 'Graphik';
-    color: var(--white-color)
+    color: var(--black-color)
 }
 
-.hl1 {
+h1 {
     font-weight: 600;
     font-size: 52px;
     line-height: 64px;
 }
 
-.hl2 {
+h2 {
     font-weight: 600;
     font-size: 40px;
     line-height: 56px;
 }
 
-.hl3 {
+h3 {
     font-weight: 600;
     font-size: 32px;
     line-height: 40px;
 }
 
-.hl4 {
+h4 {
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
 }
 
-.hl5 {
+h5 {
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
 }
 
-.hl6 {
+h6 {
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
@@ -106,4 +106,18 @@ body {
     font-weight: 600;
     font-size: 12px;
     line-height: 16px;
+}
+
+.mt92 {
+    margin-top: 92px;
+}
+
+.mb92 {
+    margin-bottom: 92px;
+}
+.mb61 {
+    margin-bottom: 61px;
+}
+.mb16 {
+    margin-bottom: 16px
 }
