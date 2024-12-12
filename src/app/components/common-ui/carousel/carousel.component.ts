@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   imports: [CommonModule]
 })
 export class CarouselComponent implements OnInit {
+Array(arg0: number): any {
+throw new Error('Method not implemented.');
+}
   items = [
     { id: 1, img: '/assets/imgs/avatar-1.png', sity: 'Санкт-Петербург',  name: 'Константинов Михаил Павлович', description: 'Каждый из нас понимает очевидную вещь: перспективное планирование предоставляет широкие возможности для анализа существующих паттернов поведения. В своём стремлении улучшить пользовательский опыт мы' },
     { id: 2, img: '/assets/imgs/avatar-2.png', sity: 'Санкт-Петербург', name: 'Иван Иванов', description: 'Каждый из нас понимает очевидную вещь: перспективное планирование предоставляет широкие возможности для анализа существующих паттернов поведения. В своём стремлении улучшить пользовательский опыт мы упускаем, что активно развивающиеся страны третьего мира призваны к ответу.' },
@@ -24,12 +27,30 @@ export class CarouselComponent implements OnInit {
   itemsPerSlide = 3;
   itemsToSlide = 1;
 
+  private slideInterval: any;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.startAutoSlide();
+  }
+
+  ngOnDestroy(): void {
+    this.stopAutoSlide();
+  }
+
+  startAutoSlide(): void {
+    this.slideInterval = setInterval(() => {
+      this.nextSlide();
+    }, 3000);
+  }
+
+  stopAutoSlide(): void {
+    clearInterval(this.slideInterval);
+  }
 
   nextSlide(): void {
-    if (this.currentIndex + this.itemsToSlide < this.items.length) {
+    if (this.currentIndex + this.itemsPerSlide < this.items.length) {
       this.currentIndex += this.itemsToSlide;
     }
   }
@@ -40,7 +61,22 @@ export class CarouselComponent implements OnInit {
     }
   }
 
+  goToSlide(index: number): void {
+    this.currentIndex = index * this.itemsPerSlide;
+  }
+
   get visibleItems(): any[] {
     return this.items.slice(this.currentIndex, this.currentIndex + this.itemsPerSlide);
+  }
+
+  get slideCount(): number {
+    return Math.ceil(this.items.length / this.itemsPerSlide);
+  }
+
+  get currentSlideIndex(): number {
+    return Math.floor(this.currentIndex / this.itemsPerSlide);
+  }
+  getSlideIndices(count: number): number[] {
+    return Array.from({ length: count }, (_, i) => i);
   }
 }

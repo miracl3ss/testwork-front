@@ -1,73 +1,113 @@
 .carousel {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding: 20px;
-    box-sizing: border-box;
-  
-    .carousel-track {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      transition: transform 0.3s ease-in-out;
-  
-      // Адаптивность для различных экранов
-      @media (max-width: 1024px) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-  
-      @media (max-width: 768px) {
-        grid-template-columns: 1fr;
-      }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 1087px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  .carousel-track {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    transition: transform 0.3s ease-in-out;
+
+    // Адаптивность для различных экранов
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
     }
-  
-    .carousel-item {
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-  
-      h3 {
-        margin-top: 0;
-      }
-  
-      p {
-        margin-bottom: 0;
-      }
-    }
-  
-    .carousel-control {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.7);
-      }
-  
-      &.prev {
-        left: 10px;
-      }
-  
-      &.next {
-        right: 10px;
-      }
-  
-      &[disabled] {
-        background-color: rgba(0, 0, 0, 0.3);
-        cursor: not-allowed;
-      }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
     }
   }
+
+  .carousel-item {
+    background-color: var(--white-color);
+    border-radius: 8px;
+    padding: 22px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 24px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    h3 {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+    &:hover {
+      box-shadow: 0 15px 24px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  .carousel-item__profile {
+    display: grid;
+    grid-template-areas: "avatar name" "avatar sity";
+    grid-template-columns: 60px;
+    gap: 4px
+  }
+
+  .carousel-item__profile p.b12 {
+    grid-area: sity;
+  }
+
+  .carousel-item__profile img {
+    grid-area: avatar;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+  }
+
+  .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--black-color);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    fill: var(--primary-color);
+
+    &.prev {
+      left: -64px;
+    }
+
+    &.next {
+      right: -64px;
+    }
+
+    &[disabled] {
+      cursor: not-allowed;
+      fill: var(--mid-gray-color);
+    }
+
+    
+    }
+  }
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    height: 8px;
+  }
+
+  .carousel-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.active {
+      background-color: #007BFF;
+    }
+}
