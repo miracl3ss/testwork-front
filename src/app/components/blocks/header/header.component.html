@@ -5,3 +5,5 @@
     <a href="#">Вопросы и ответы</a>
     <a href="#">Форма</a>
 </nav>
+<app-modal-menu [isOpen]="isModalOpen" (close)="closeModal()"></app-modal-menu>
+<button (click)="toggleModal()"><img id="burgerMenu" src="/assets/imgs/burger.svg"></button>

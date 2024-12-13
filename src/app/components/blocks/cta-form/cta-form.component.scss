@@ -1,0 +1,26 @@
+:host {
+    text-align: center;
+}
+
+div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 30px;
+    @media (max-width: 768px) {
+        margin: 0 20px;
+    }
+}
+@media (max-width: 375px) {
+    h2 {
+        font-size: 24px;
+        line-height: 32px;
+    }
+    div {
+        gap: 20px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr min-content 1fr;
+    }
+}

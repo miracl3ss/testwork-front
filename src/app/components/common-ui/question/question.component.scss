@@ -1,0 +1,52 @@
+:host {
+    display: grid;
+    grid-template-columns: 1fr 24px;
+    border: solid 1px var(--light-gray-color);
+    border-left: 0;
+    border-right: 0;
+    gap: 24px;
+    padding: 24px 0;
+    max-width: 1008px;
+    margin: 0 auto;
+    align-items: center;
+    &:hover {
+        label {
+            color: var(--primary-color)
+        }
+        path {
+            fill: var(--primary-color);
+        }
+        circle {
+            stroke: var(--primary-color)
+        }
+        .b18 {
+            color: inherit
+        }
+    }
+    @media (max-width: 768px) {
+        margin: 0 20px;
+        gap: 24px
+    }
+    @media (max-width: 375px) {
+        .b18 {
+            font-size: 16px;
+            line-height: 28px;
+        }
+        margin: 0 16px;
+        gap: 16px
+    }
+}
+
+input:checked + .b18 {
+    display: block;
+}
+
+.b18 {
+    display: none;
+    grid-row: 2;
+    grid-column: 1;
+}
+
+input {
+    display: none;
+}

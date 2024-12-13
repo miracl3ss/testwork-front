@@ -1,9 +1,13 @@
 :host {
-    background-color: var(--white-color);
+    background-color: var(--light-gray-color);
     border-radius: 4px;
     color: var(--black-color);
     width: min-content;
     padding: 20px 40px;
     text-wrap: nowrap;
     cursor: pointer;
+    &:hover {
+        background-color: var(--white-color);
+        border: 1px solid var(--mid-gray-color)
+    }
 }

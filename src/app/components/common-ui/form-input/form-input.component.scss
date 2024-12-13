@@ -1,0 +1,61 @@
+:host {
+    height: min-content;
+}
+
+input {
+    width: 100%;
+    padding: 16px 15px;
+    background-color: var(--extralight-gray-color);
+    border-radius: 4px;
+
+}
+
+label {
+    color: var(--dark-gray-color);
+}
+
+form {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+
+    input {
+        width: 100%;
+        padding: 28px 16px 4px;
+        font-size: 16px;
+        border-radius: 4px;
+        box-sizing: border-box;
+        outline: none;
+        transition: border-color 0.3s ease;
+
+
+        &:not(:placeholder-shown) {
+            background-color: var(--white-color);
+            border: solid 2px var(--light-gray-color)
+        }
+
+        &:focus {
+            border: solid 2px var(--mid-gray-color);
+            background-color: var(--white-color);
+        }
+
+        &:focus+label,
+        &:not(:placeholder-shown)+label {
+            top: 8px;
+            left: 12px;
+            font-size: 14px;
+            color: var(--gray-color);
+            padding: 0 4px;
+        }
+    }
+
+    label {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        pointer-events: none;
+        transition: top 0.3s ease, left 0.3s ease, font-size 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+        color: var(--dark-gray-color);
+        background-color: transparent;
+    }
+}

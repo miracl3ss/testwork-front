@@ -1,3 +1,15 @@
 p {
-    color: var(--dark-gray-color)
+    color: var(--dark-gray-color);
+    grid-area: text;
 }
+
+section {
+    @media (max-width: 768px) {
+        display: grid;
+        grid-template-areas: "img head" "img text";
+        column-gap: 34px;
+        row-gap: 4px;
+    }
+}
+img { grid-area: img };
+h6 { grid-area: head; }

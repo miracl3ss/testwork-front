@@ -1,0 +1,15 @@
+<form action="">
+    <input class="b18" 
+    name="{{inputData.name}}"
+    type="{{inputData.type}}" 
+    id="{{inputData.name}}"
+    (focus)="onFocus()" 
+    (blur)="onBlur()"
+    (input)="updatePlaceholder()"
+    placeholder="{{dynamicPlaceholder}}" 
+    [(ngModel)]="inputValue"
+    >
+    <label for="{{inputData.name}}" class="b18">{{inputData.placeholder}}</label>
+    
+    
+</form>
