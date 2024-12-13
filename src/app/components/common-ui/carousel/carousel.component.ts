@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-carousel',
@@ -78,5 +78,22 @@ throw new Error('Method not implemented.');
   }
   getSlideIndices(count: number): number[] {
     return Array.from({ length: count }, (_, i) => i);
+  }
+  @HostListener('window:resize')
+  onResize(): void {
+    this.updateItemsPerSlide();
+  }
+
+  updateItemsPerSlide(): void {
+    const width = window.innerWidth;
+    console.log(width)
+    if (width >= 1024) {
+      this.itemsPerSlide = 3;
+    } else if (width > 425 && width < 1024) {
+      this.itemsPerSlide = 2;
+    } else {
+      this.itemsPerSlide = 1;
+    }
+    this.currentIndex = 0;
   }
 }
